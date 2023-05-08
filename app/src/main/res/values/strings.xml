@@ -1,0 +1,89 @@
+<resources>
+    <string name="app_name">BG PROJECT</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="log_in">Log In</string>
+    <string name="welcome">Welcome</string>
+    <string name="full_name">Full Name</string>
+    <string name="confirm_password">Confirm-Password</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="recruitment_and_registration_of_tgls">Recruitment and Registration of TGLs</string>
+    <string name="tgls_information">TGLs Information</string>
+    <string name="conduct_tests">Conduct Tests</string>
+    <string name="conduct_interviews">Conduct Interviews</string>
+    <string name="register_and_setup_trust_groups">Register and Setup Trust Groups</string>
+    <string name="full_name_first_amp_last"><![CDATA[Full Name (First & Last)]]></string>
+    <string name="b_v_n">BVN</string>
+    <string name="n_i_n">NIN</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="d_o_b">Date of Birth</string>
+    <string name="state_of_origin">State of Origin</string>
+    <string name="government_id_type">Government Identification Type</string>
+    <string name="government_id">Government Identification ID</string>
+    <string name="government_image">Government Identification Image</string>
+    <string name="l_g_a">Local Government Area</string>
+    <string name="hub">Hub</string>
+    <string name="sex">Sex</string>
+    <string name="register">Register</string>
+    <string name="tgl_registration_form">TGL REGISTRATION FORM</string>
+
+
+    <string-array name="Sex">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="idType">
+        <item>Driver\'s License</item>
+        <item>International Passport</item>
+        <item>Permanent Voter\'s Card (PVC)</item>
+        <item>National Identification Number (NIN)</item>
+    </string-array>
+
+
+    <string-array name="State">
+        <item>Abia</item>
+        <item>Adamawa</item>
+        <item>Akwa Ibom</item>
+        <item>Anambra</item>
+        <item>Bauchi</item>
+        <item>Bayelsa</item>
+        <item>Benue</item>
+        <item>Borno</item>
+        <item>Cross River</item>
+        <item>Delta</item>
+        <item>Ebonyi</item>
+        <item>Edo</item>
+        <item>Ekiti</item>
+        <item>Enugu</item>
+        <item>Gombe</item>
+        <item>Imo</item>
+        <item>Jigawa</item>
+        <item>Kaduna</item>
+        <item>Kano</item>
+        <item>Katsina</item>
+        <item>Kebbi</item>
+        <item>Kogi</item>
+        <item>Kwara</item>
+        <item>Lagos</item>
+        <item>Nasarawa</item>
+        <item>Niger</item>
+        <item>Ogun</item>
+        <item>Ondo</item>
+        <item>Osun</item>
+        <item>Oyo</item>
+        <item>Plateau</item>
+        <item>Rivers</item>
+        <item>Sokoto</item>
+        <item>Taraba</item>
+        <item>Yobe</item>
+        <item>Zamfara</item>
+    </string-array>
+
+</resources>

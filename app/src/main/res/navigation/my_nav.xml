@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/signInFragment">
+
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.example.bgproject.fragments.SignInFragment"
+        android:label="@string/log_in"
+        tools:layout="@layout/fragment_sign_in">
+        <action
+            android:id="@+id/action_signInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.bgproject.fragments.SignUpFragment"
+        android:label="@string/sign_up"
+        tools:layout="@layout/fragment_sign_up">
+        <action
+            android:id="@+id/action_signUpFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homePageFragment"
+        android:name="com.example.bgproject.fragments.HomePageFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home_page" >
+        <action
+            android:id="@+id/action_homePageFragment_to_recruitmentFragment"
+            app:destination="@id/recruitmentFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_tglsFragment"
+            app:destination="@id/tglsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recruitmentFragment"
+        android:name="com.example.bgproject.fragments.recruitment.RecruitmentFragment"
+        android:label="fragment_recruitment"
+        tools:layout="@layout/fragment_recruitment" >
+        <action
+            android:id="@+id/action_recruitmentFragment_to_tglsFragment"
+            app:destination="@id/tglsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tglsFragment"
+        android:name="com.example.bgproject.fragments.recruitment.TglsFragment"
+        android:label="fragment_tgls"
+        tools:layout="@layout/fragment_tgls" >
+        <action
+            android:id="@+id/action_tglsFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_tglsFragment_to_recruitmentFragment"
+            app:destination="@id/recruitmentFragment" />
+    </fragment>
+</navigation>
