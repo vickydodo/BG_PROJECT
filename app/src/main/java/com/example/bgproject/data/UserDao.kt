@@ -14,13 +14,13 @@ import com.example.bgproject.model.User
 interface UserDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(user : User)
+    suspend fun insert(user: User)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertTgl(tgl: Tgl)
 
     @Query("SELECT * FROM tgl_table")
-    fun readAllTglData():LiveData<List<Tgl>>
+    fun readAllTglData(): LiveData<List<Tgl>>
 
 
     @Query("SELECT * FROM users_table WHERE email = :email")
@@ -29,7 +29,7 @@ interface UserDao {
     @Query("SELECT * FROM users_table WHERE email = :email AND password = :password")
     suspend fun getUserByEmailAndPassword(email: String, password: String): User?
 
-//    @Query("SELECT * FROM tgl_table WHERE officerId = :officerId")
-//    suspend fun getTglByUser(officerId: String): Tgl
+    @Query("SELECT * FROM tgl_table WHERE officerId = :officerId")
+    fun getTglByUser(officerId: String): LiveData<List<Tgl>>
 
 }

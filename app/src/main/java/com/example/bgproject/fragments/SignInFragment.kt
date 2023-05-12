@@ -1,5 +1,6 @@
 package com.example.bgproject.fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.text.TextUtils
 import androidx.fragment.app.Fragment
@@ -44,6 +45,7 @@ class SignInFragment : Fragment() {
             if (email.isNotEmpty() && password.isNotEmpty()) {
                 lifecycleScope.launch {
                     mUserViewModel.login(email, password)
+
                     if (mUserViewModel.user == null) {
                         Toast.makeText(
                             context,
@@ -52,8 +54,17 @@ class SignInFragment : Fragment() {
                         ).show()
                         return@launch
                     }
+                    val sharedPreferences = requireActivity().getSharedPreferences(
+                        "my_preferences",
+                        Context.MODE_PRIVATE
+                    )
+                    sharedPreferences.edit()
+                        .putString("OFFICER_ID", mUserViewModel.user?.officerId).apply()
+
                     mUserViewModel.user = null
+
                     findNavController().navigate(R.id.action_signInFragment_to_homePageFragment)
+
                 }
             }else{
                 Toast.makeText(context, "Please enter all fields", Toast.LENGTH_SHORT).show()

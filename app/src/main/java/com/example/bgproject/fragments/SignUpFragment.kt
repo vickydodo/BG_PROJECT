@@ -26,7 +26,7 @@ class SignUpFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View?{
+    ): View? {
         // Inflate the layout for this fragment
         binding = FragmentSignUpBinding.inflate(inflater, container, false)
         return binding.root
@@ -45,18 +45,41 @@ class SignUpFragment : Fragment() {
             val confirmPassword = binding.etConfirmPassword.text.toString().trim()
 
 
-            if (fullName.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty()) {
+//            if (fullName.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty()) {
+            if (fullName.length < 5) {
+                Toast.makeText(
+                    requireContext(), "Name should be at least 5 characters long",
+                    Toast.LENGTH_SHORT
+                ).show()
+                return@setOnClickListener
+            }
+
+            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                Toast.makeText(
+                    requireContext(), "Invalid email format",
+                    Toast.LENGTH_SHORT
+                ).show()
+                return@setOnClickListener
+            }
+
+            if (password.length < 5) {
+                Toast.makeText(
+                    requireContext(), "Password should be at least 5 characters long",
+                    Toast.LENGTH_SHORT
+                ).show()
+                return@setOnClickListener
+            } else {
                 lifecycleScope.launch {
                     if (password == confirmPassword) {
                         mUserViewModel.alreadyUser(email)
-                        if (mUserViewModel.user!=null){
+                        if (mUserViewModel.user != null) {
                             Toast.makeText(context, "User already exist", Toast.LENGTH_SHORT).show()
-                            return@launch}
+                            return@launch
+                        }
 
-                        mUserViewModel.user = User(officerId = generateOfficerId() , fullName , email, password)
+                        mUserViewModel.user =
+                            User(officerId = generateOfficerId(), fullName, email, password)
                         mUserViewModel.registerUser()
-                        val sharedPreferences = requireActivity().getSharedPreferences("my_preferences", Context.MODE_PRIVATE)
-                        sharedPreferences.edit().putString("OFFICER_ID", mUserViewModel.user?.officerId).apply()
                         Toast.makeText(
                             context,
                             "User Successfully Registered",
@@ -72,19 +95,21 @@ class SignUpFragment : Fragment() {
                         ).show()
                     }
                 }
-            } else {
-                Toast.makeText(context, "Please fill in the fields", Toast.LENGTH_SHORT)
-                    .show()
+//            } else {
+//                Toast.makeText(context, "Please fill in the fields", Toast.LENGTH_SHORT)
+//                    .show()
+//            }
+            }
+
+            binding.llLogIn.setOnClickListener {
+                findNavController().navigate(R.id.action_signUpFragment_to_signInFragment)
             }
         }
 
-        binding.llLogIn.setOnClickListener {
-            findNavController().navigate(R.id.action_signUpFragment_to_signInFragment)
-        }
+
     }
 
-    private fun generateOfficerId(): String{
-       return "training_officer_${System.currentTimeMillis()}"
+    private fun generateOfficerId(): String {
+        return "training_officer_${System.currentTimeMillis()}"
     }
-
 }

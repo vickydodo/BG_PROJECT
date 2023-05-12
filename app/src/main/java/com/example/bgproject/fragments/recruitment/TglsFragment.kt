@@ -44,7 +44,7 @@ class TglsFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         mUserViewModel = ViewModelProvider(this)[UserViewModel::class.java]
-        mUserViewModel.readAllTgl.observe(viewLifecycleOwner, Observer { tgl ->
+        mUserViewModel.getTglByUser.observe(viewLifecycleOwner, Observer { tgl ->
             adapter.setData(tgl)
         })
 

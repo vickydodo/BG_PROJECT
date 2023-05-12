@@ -16,7 +16,7 @@ import com.example.bgproject.model.User
         User::class,
         Tgl::class
     ],
-    version = 3, exportSchema = false
+    version = 4, exportSchema = false
 )
 @TypeConverters(EditableConverter::class)
 
@@ -25,7 +25,7 @@ abstract class UserDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
 
     companion object {
-        private val migration1to2 = object : Migration(2, 3) {
+        private val migration1to2 = object : Migration(3, 4) {
             override fun migrate(database: SupportSQLiteDatabase) {
                 // perform database migration
             }

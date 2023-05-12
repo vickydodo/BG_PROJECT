@@ -22,24 +22,26 @@
         android:id="@+id/btnSignOut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Sign Out"
         android:layout_marginLeft="10dp"
         android:backgroundTint="@color/yellow"
+        android:hint="Sign Out"
         android:textColor="@color/black"
+        app:cornerRadius="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:cornerRadius="12dp"/>
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/btnNewTglRegistration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="REGISTER NEW TGL"
         android:layout_marginRight="10dp"
         android:backgroundTint="@color/yellow"
+        android:hint="REGISTER NEW TGL"
         android:textColor="@color/black"
+        app:cornerRadius="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:cornerRadius="12dp"/>
+        android:textStyle="bold"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

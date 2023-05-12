@@ -29,8 +29,8 @@ class UserRepository(private val userDao: UserDao) {
         return userDao.getUserByEmail(email)
     }
 
-//    suspend fun getTglByUser(officerId: String):Tgl{
-//        return userDao.getTglByUser(officerId)
-//    }
+    fun getTglByUser(officerId: String):LiveData<List<Tgl>>{
+        return userDao.getTglByUser(officerId)
+    }
 
 }
